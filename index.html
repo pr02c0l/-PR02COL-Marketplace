@@ -1,98 +1,113 @@
-
-<!DOCTYPE html>
+here<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PR02COL Marketplace</title>
+  <title>PR02COL Digital Marketplace</title>
   <style>
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     body {
-      margin: 0;
       font-family: Arial, sans-serif;
-      background: #f4f6fb;
+      background: #f1f5f9;
       color: #172033;
     }
 
     header {
-      background: #101828;
+      background: #101c35;
       color: white;
-      padding: 22px 18px;
+      padding: 22px 16px;
+      text-align: center;
     }
 
     header h1 {
-      margin: 0;
       font-size: 25px;
+      margin-bottom: 8px;
     }
 
     header p {
       color: #cbd5e1;
-      margin-bottom: 0;
-    }
-
-    nav {
-      display: flex;
-      gap: 10px;
-      overflow-x: auto;
-      padding: 12px;
-      background: white;
-      border-bottom: 1px solid #ddd;
-    }
-
-    nav a {
-      color: #344054;
-      text-decoration: none;
-      padding: 10px;
-      white-space: nowrap;
       font-size: 14px;
     }
 
-    main {
-      max-width: 850px;
+    nav {
+      background: white;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      padding: 12px 5px;
+      gap: 12px;
+      box-shadow: 0 2px 8px #00000010;
+    }
+
+    nav a {
+      color: #243653;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .container {
+      max-width: 900px;
       margin: auto;
-      padding: 18px;
+      padding: 20px 15px;
     }
 
     .welcome {
-      background: #155eef;
+      background: linear-gradient(135deg, #123c69, #087f8c);
       color: white;
       border-radius: 16px;
-      padding: 24px 20px;
-      margin-bottom: 20px;
+      padding: 28px 20px;
+      margin-bottom: 22px;
     }
 
     .welcome h2 {
-      margin-top: 0;
       font-size: 25px;
+      margin-bottom: 12px;
     }
 
     .welcome p {
       line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .button {
+      display: inline-block;
+      background: #fbbf24;
+      color: #172033;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 18px;
+      font-weight: bold;
+      text-decoration: none;
+      cursor: pointer;
     }
 
     .section-title {
-      margin-top: 26px;
+      margin: 24px 0 14px;
+      font-size: 20px;
     }
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 14px;
     }
 
     .card {
       background: white;
-      padding: 18px 14px;
       border-radius: 12px;
-      border: 1px solid #e4e7ec;
-      box-shadow: 0 2px 5px #00000008;
+      padding: 20px 14px;
+      box-shadow: 0 3px 12px #00000008;
     }
 
-    .icon {
+    .card .icon {
       font-size: 28px;
+      margin-bottom: 12px;
     }
 
     .card h3 {
@@ -102,57 +117,42 @@
 
     .card p {
       font-size: 13px;
-      color: #667085;
+      color: #64748b;
       line-height: 1.5;
+      margin-bottom: 15px;
     }
 
-    button {
-      background: #155eef;
-      color: white;
-      border: none;
-      padding: 11px 14px;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 14px;
-    }
-
-    .card button {
-      width: 100%;
-      margin-top: 5px;
+    .card a {
+      color: #087f8c;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: bold;
     }
 
     .notice {
-      margin-top: 22px;
-      background: #fffaeb;
-      border: 1px solid #fedf89;
-      color: #854a0e;
+      background: #fff7ed;
+      border: 1px solid #fed7aa;
+      color: #9a3412;
       padding: 14px;
       border-radius: 10px;
       font-size: 13px;
       line-height: 1.6;
+      margin-top: 22px;
     }
 
     footer {
-      margin-top: 30px;
-      padding: 22px;
-      background: #101828;
-      color: #cbd5e1;
       text-align: center;
+      padding: 25px 12px;
+      color: #64748b;
       font-size: 13px;
-    }
-
-    @media (max-width: 380px) {
-      .grid {
-        grid-template-columns: 1fr;
-      }
     }
   </style>
 </head>
-
 <body>
+
   <header>
     <h1>PR02COL Marketplace</h1>
-    <p>Your digital marketplace</p>
+    <p>Your Digital Services Marketplace</p>
   </header>
 
   <nav>
@@ -163,70 +163,73 @@
     <a href="#balance">💰 Balance</a>
   </nav>
 
-  <main>
+  <main class="container">
+
     <section class="welcome" id="home">
       <h2>Welcome to PR02COL!</h2>
       <p>
-        Manage your profile, explore available number services,
-        and view your marketplace options in one place.
+        Discover digital services, explore number services,
+        and manage your marketplace account in one place.
       </p>
-      <button onclick="showMessage('Welcome to PR02COL Marketplace!')">
-        Get Started
-      </button>
+      <a class="button" href="#numbers">Get Started →</a>
     </section>
 
     <h2 class="section-title">Your Marketplace</h2>
 
-    <section class="grid">
-      <article class="card" id="profile">
+    <div class="grid">
+
+      <section class="card" id="profile">
         <div class="icon">👤</div>
         <h3>My Profile</h3>
-        <p>View your account profile and personal details.</p>
-        <button onclick="showMessage('Profile services will be added later.')">
-          Open Profile
-        </button>
-      </article>
+        <p>View and manage your account information.</p>
+        <a href="#payment">Explore profile →</a>
+      </section>
 
-      <article class="card" id="numbers">
+      <section class="card" id="numbers">
         <div class="icon">📱</div>
-        <h3>Buy WhatsApp Numbers</h3>
-        <p>Explore the number purchasing section.</p>
-        <button onclick="showMessage('Number purchasing is not connected yet.')">
-          Explore Numbers
-        </button>
-      </article>
+        <h3>Buy Numbers</h3>
+        <p>Explore phone-number services available in the marketplace.</p>
+        <a href="#notice">Explore services →</a>
+      </section>
 
-      <article class="card" id="payment">
+      <section class="card" id="payment">
         <div class="icon">💳</div>
-        <h3>Make Payment</h3>
-        <p>Payment integration will be added securely.</p>
-        <button onclick="showMessage('Payments are not enabled yet.')">
-          Payment Options
-        </button>
-      </article>
+        <h3>Payments</h3>
+        <p>Learn about payment options for your account.</p>
+        <a href="#notice">Payment information →</a>
+      </section>
 
-      <article class="card" id="balance">
+      <section class="card" id="balance">
         <div class="icon">💰</div>
-        <h3>Balance & Spending</h3>
-        <p>Your real account balance will appear after backend integration.</p>
-        <button onclick="showMessage('Live balance is not connected yet.')">
-          View Balance
-        </button>
-      </article>
+        <h3>My Balance</h3>
+        <p>Your account balance feature can be connected to a secure backend.</p>
+        <a href="#notice">Balance information →</a>
+      </section>
 
-      <article class="card">
-        <div class="icon">📦</div>
-        <h3>My Numbers</h3>
-        <p>Purchased numbers can appear here after the service is connected.</p>
-        <button onclick="showMessage('Your number history is not connected yet.')">
-          My Numbers
-        </button>
-      </article>
+    </div>
 
-      <article class="card">
-        <div class="icon">🤖</div>
-        <h3>Telegram Bot</h3>
-        <p>Prepare your marketplace for future Telegram integration.</p>
-        <button onclick="showMessage('Telegram integration is not configured yet.')">
-          Bot Connection
-        </
+    <h2 class="section-title">About PR02COL</h2>
+
+    <section class="card">
+      <h3>Your marketplace, in one place</h3>
+      <p>
+        PR02COL is designed to bring your digital marketplace
+        services together in a simple and convenient interface.
+      </p>
+    </section>
+
+    <div class="notice" id="notice">
+      <strong>Demo notice:</strong>
+      This is the marketplace homepage design. Live phone-number
+      inventory, customer accounts, verified payments, and wallet
+      balances must be connected to a secure backend before use.
+    </div>
+
+  </main>
+
+  <footer>
+    © 2026 PR02COL Marketplace. All rights reserved.
+  </footer>
+
+</body>
+</html>
