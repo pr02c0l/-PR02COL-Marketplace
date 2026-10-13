@@ -230,6 +230,20 @@ here<!DOCTYPE html>
   <footer>
     © 2026 PR02COL Marketplace. All rights reserved.
   </footer>
+  
 
 </body>
 </html>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+  const SUPABASE_URL = 'https://vqvoebramvtpibtzurlh.supabase.co';
+  const SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_6Jjm3ptVwO_AkEk7nxQboQ_QTeIPy_f';
+
+  const supabaseClient = window.supabase.createClient(
+    SUPABASE_URL,
+    sb_publishable_6Jjm3ptVwO_AkEk7nxQboQ_QTeIPy_f
+  );
+
+  console.log('PR02COL Supabase client initialized!');
+</script>
