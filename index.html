@@ -244,6 +244,81 @@ here<!DOCTYPE html>
     SUPABASE_URL,
     sb_publishable_6Jjm3ptVwO_AkEk7nxQboQ_QTeIPy_f
   );
+<section id="pr02col-registration">
+  <h2>Create Your Account</h2>
 
+  <form id="signup-form">
+    <label for="signup-email">Email Address</label>
+    <input
+      type="email"
+      id="signup-email"
+      placeholder="Enter your email"
+      required
+    >
+
+    <label for="signup-password">Password</label>
+    <input
+      type="password"
+      id="signup-password"
+      placeholder="At least 8 characters"
+      minlength="8"
+      required
+    >
+
+    <button type="submit" id="signup-button">
+      Create Account
+    </button>
+
+    <p id="signup-message" role="status"></p>
+  </form>
+</section>
+  <script>
+  const signupForm = document.getElementById('signup-form');
+  const signupMessage = document.getElementById('signup-message');
+  const signupButton = document.getElementById('signup-button');
+
+  signupForm.addEventListener('submit', async function (event) {
+    event.preventDefault();
+
+    const email = document
+      .getElementById('signup-email')
+      .value.trim();
+
+    const password = document
+      .getElementById('signup-password')
+      .value;
+
+    signupButton.disabled = true;
+    signupMessage.textContent = 'Creating your account...';
+
+    try {
+      const { data, error } = await supabaseClient.auth.signUp({
+        email: email,
+        password: password
+      });
+
+      if (error) {
+        throw error;
+      }
+
+      if (data.session) {
+        signupMessage.textContent =
+          'Account created successfully! You are signed in.';
+      } else {
+        signupMessage.textContent =
+          'Registration started! Check your email for a confirmation link if required.';
+      }
+
+      signupForm.reset();
+
+    } catch (error) {
+      signupMessage.textContent =
+        'Registration failed: ' + error.message;
+
+    } finally {
+      signupButton.disabled = false;
+    }
+  });
+</script>
   console.log('PR02COL Supabase client initialized!');
 </script>
