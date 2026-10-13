@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101827">
+
+  <title>PR02COL Marketplace</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #101827;
+      color: #ffffff;
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 20px;
+      background: #172338;
+      border-bottom: 1px solid #334155;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 23px;
+      font-weight: bold;
+      color: #60a5fa;
+    }
+
+    .status {
+      color: #86efac;
+      font-size: 13px;
+    }
+
+    main {
+      max-width: 900px;
+      margin: auto;
+      padding: 25px 18px;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 35px 12px;
+    }
+
+    .hero h1 {
+      font-size: clamp(30px, 7vw, 48px);
+      line-height: 1.2;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      color: #cbd5e1;
+      max-width: 600px;
+      margin: 0 auto 25px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 12px 18px;
+      margin: 5px;
+      border-radius: 9px;
+      background: #2563eb;
+      color: white;
+      text-decoration: none;
+      border: none;
+      font-size: 15px;
+      cursor: pointer;
+    }
+
+    .button.secondary {
+      background: #243247;
+      border: 1px solid #475569;
+    }
+
+    .section-title {
+      margin-top: 35px;
+      margin-bottom: 15px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 15px;
+    }
+
+    .card {
+      padding: 20px;
+      background: #1b293d;
+      border: 1px solid #334155;
+      border-radius: 14px;
+    }
+
+    .card h3 {
+      margin-top: 0;
+    }
+
+    .card p {
+      color: #cbd5e1;
+      font-size: 14px;
+    }
+
+    .notice {
+      margin-top: 25px;
+      padding: 15px;
+      border-left: 4px solid #60a5fa;
+      background: #172338;
+      border-radius: 6px;
+      color: #dbeafe;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px 15px;
+      color: #94a3b8;
+      font-size: 13px;
+      border-top: 1px solid #334155;
+      margin-top: 35px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">PR02COL</div>
+    <div class="status">Marketplace Preview</div>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <h1>Welcome to PR02COL</h1>
+
+      <p>
+        Your marketplace dashboard for managing your profile,
+        payments, account balance and number orders.
+      </p>
+
+      <a class="button"
+         href="https://t.me/pr02col">
+        Open Telegram Bot
+      </a>
+
+      <a class="button secondary" href="#services">
+        Explore Services
+      </a>
+    </section>
+
+    <h2 class="section-title" id="services">Marketplace Dashboard</h2>
+
+    <section class="grid">
+
+      <div class="card">
+        <h3>👤 My Profile</h3>
+        <p>Account details and customer profile.</p>
+        <button class="button secondary"
+                onclick="showMessage()">
+          Open Profile
+        </button>
+      </div>
+
+      <div class="card">
+        <h3>📱 Buy a Number</h3>
+        <p>View supported countries and available inventory.</p>
+        <button class="button"
+                onclick="showMessage()">
+          Browse Numbers
+        </button>
+      </div>
+
+      <div class="card">
+        <h3>💳 Make Payment</h3>
+        <p>Payment options will be provided after secure payment integration.</p>
+        <button class="button secondary"
+                onclick="showMessage()">
+          Payment Options
+        </button>
+      </div>
+
+      <div class="card">
+        <h3>💰 My Balance</h3>
+        <p>View your balance and account spending.</p>
+        <button class="button secondary"
+                onclick="showMessage()">
+          View Balance
+        </button>
+      </div>
+
+      <div class="card">
+        <h3>📦 My Numbers</h3>
+        <p>Review your orders and remaining inventory.</p>
+        <button class="button secondary"
+                onclick="showMessage()">
+          View Orders
+        </button>
+      </div>
+
+      <div class="card">
+        <h3>🛟 Customer Support</h3>
+        <p>Contact our team for assistance.</p>
+        <a class="button secondary"
+           href="https://t.me/pr02col">
+          Contact Us
+        </a>
+      </div>
+
+    </section>
+
+    <div class="notice">
+      <strong>Important:</strong>
+      This is the initial website preview.
+      Purchases, account balances and payments are not active yet.
+      Never send money until official payment processing is connected
+      and tested.
+    </div>
+
+  </main>
+
+  <footer>
+    &copy; 2026 PR02COL Marketplace.
+    All rights reserved.
+  </footer>
+
+  <script>
+    function showMessage() {
+      alert(
+        "This feature is not active yet. " +
+        "PR02COL is still setting up its secure services."
+      );
+    }
+  </script>
+
+</body>
+</html>
