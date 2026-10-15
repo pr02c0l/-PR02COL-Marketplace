@@ -184,13 +184,43 @@
         <a href="#notice">Payment information →</a>
       </section>
 
-      <section class="card" id="balance">
-        <div class="icon" aria-hidden="true">💰</div>
-        <h3>My Balance</h3>
-        <p>Account balance requires a secure backend and verified transaction records.</p>
-        <a href="#notice">Balance information →</a>
-      </section>
-    </div>
+      <section class="card" id="numbers">
+  <div class="icon" aria-hidden="true">📱</div>
+  <h3>Buy Numbers</h3>
+  <p>Select a country to explore available phone-number services.</p>  <div class="form-row">
+    <label for="country-select">Select Country</label>
+    <select id="country-select">
+      <option value="">Choose a country</option>
+      <option value="NG">🇳🇬 Nigeria</option>
+      <option value="GH">🇬🇭 Ghana</option>
+      <option value="KE">🇰🇪 Kenya</option>
+      <option value="ZA">🇿🇦 South Africa</option>
+      <option value="US">🇺🇸 United States</option>
+      <option value="GB">🇬🇧 United Kingdom</option>
+      <option value="IN">🇮🇳 India</option>
+    </select>
+  </div>  <button type="button" id="check-numbers">
+    Explore Services
+  </button>  <div id="number-results" aria-live="polite"></div>
+</section><script>
+  const countrySelect = document.getElementById('country-select');
+  const checkNumbers = document.getElementById('check-numbers');
+  const numberResults = document.getElementById('number-results');
+
+  checkNumbers.addEventListener('click', function () {
+    const country = countrySelect.value;
+
+    if (!country) {
+      numberResults.textContent = 'Please select a country first.';
+      return;
+    }
+
+    numberResults.textContent =
+      'Selected country: ' +
+      countrySelect.options[countrySelect.selectedIndex].text +
+      '. Live availability and prices will appear here after a verified number supplier is connected.';
+  });
+</script>
 
     <h2 class="section-title">Create Your Account</h2>
     <section class="auth-card" id="registration">
